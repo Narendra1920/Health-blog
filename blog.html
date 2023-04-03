@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="headercss.css">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+ div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+@media(min-width:450px) and (max-width:3000px){
+.Entire-Header{
+  height:45px;
+  color:white;
+}
+
+.logo{
+  display:block;
+  font-size:30px;
+  font-weight:500;
+
+  padding-left: 50px;
+  padding-top:0px;
+  padding-bottom: 0px;
+
+  }
+.logo p {
+  font-size:15px;
+  font-weight:400;
+  padding-top: 10px;
+  padding-right: 20px;
+  float:right;
+}
+}
+/* For Mobile */
+@media(max-width:450px){
+.Entire-Header{
+  height:40px;
+}
+
+}
+.heading{
+   font-size:1 rem;
+   font-weight:750;
+   padding-left:50 px;
+
+}
+.frst-para{
+   padding-left:10%;
+   padding-right:10%;
+   font-size:0.9rem;
+   }
+   #more {display: none;}
+
+  </style>
+<!-- Header  -->
+<div class="Entire-Header">
+   <!-- This is the Menu (Hamburger menu) which was showing on the top-->
+     <nav role="navigation">
+         <div class="logo" ><a href="{% url 'home' %}" style="color:black;">EVE</a></div>
+  <!--  <button type="submit" class="sgnup">Sign Up</button>  -->
+       <div id="menuToggle">
+       <input type="checkbox" />
+       <span></span>
+       <span></span>
+       <span></span>
+       <ul id="menu">
+        <div id="profile">
+            <a  href="{% url 'profile' %}"><li>
+              <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+              <p>Hello, {{ user.username }}</p></li></a>
+        </div>
+
+            <a href="{% url 'home' %}"><li>Home</li></a><hr/>
+            <a href="{% url 'post' %}" ><li>Health Blog</li></a></hr>
+<hr/>           {% if user.is_authenticated %}
+
+            <a href="{% url 'profile' %}"><li>Profile</li></a><hr/>
+            <a href="{% url 'logout' %}"><li>Logout</li></a><hr/>
+           {% else %}
+            <a href="{% url 'login' %}"><li>Log In</li></a><hr/>
+            <a href="{% url 'register' %}"><li>Sign Up</li></a><hr/>
+           {% endif %}
+       </ul>
+      </div>
+     </nav>
+</div>
+
+
+
+<h1 style="font-size:6vh; display: flex; justify-content: center;">Health Blog</h1>
+<h2 style="font-size:3vh; display: flex; justify-content: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Get all your health related doubts solved here</h1>
+<div   class="scrollmenu" ><a href="hair loss" style="text-decoration: none;"><img src="hair loss.jpg" style="width: 120px; height: 120px; margin-left: 20px;"><p style="text-decoration:none; margin-left: 40px;">Hair Loss</p></a><a href="Pregancy" style="text-decoration:none;"><img src="Pregancy.jpg" style="width: 120px; height: 120px; margin-left: 20px;"><p style=" margin-left: 40px;">Pregancy</p></a><a href="Stress" style="text-decoration: none;"><img src="Stress.jpg" style="width: 120px; height: 120px; margin-left: 20px;"><p style="text-decoration:none; margin-left: 10px;">Stress Management</p></a><a href="Obesity"  style="text-decoration: none;"><img src="Obesity.jpg" style="width: 120px; height: 120px; margin-left: 20px;"><p style="text-decoration:none; margin-left: 40px;">Obesity</p></a><a href="Smoking_addiction" style="text-decoration: none;"><img src="Smoking_addiction.jpg" style="width: 120px; height: 120px; margin-left: 20px;"><p style="text-decoration:none; margin-left: 5px;">Smoking-Addiction</p></a><a href="hair loss" style="text-decoration: none;"><img src="hair loss.jpg" style="width: 120px; height: 120px; margin-left: 20px;"><p style="text-decoration:none; margin-left: 40px;">Hair Loss</p></a><a href="Pregancy" style="text-decoration:none;"><img src="Pregancy.jpg" style="width: 120px; height: 120px; margin-left: 20px;"><p style=" margin-left: 40px;">Pregancy</p></a><a href="Stress" style="text-decoration: none;"><img src="Stress.jpg" style="width: 120px; height: 120px; margin-left: 20px;"><p style="text-decoration:none; margin-left: 10px;">Stress Management</p></a><a href="Obesity"  style="text-decoration: none;"><img src="Obesity.jpg" style="width: 120px; height: 120px; margin-left: 20px;"><p style="text-decoration:none; margin-left: 40px;">Obesity</p></a><a href="Smoking_addiction" style="text-decoration: none;"><img src="Smoking_addiction.jpg" style="width: 120px; height: 120px; margin-left: 20px;"><p style="text-decoration:none; margin-left: 5px;">Smoking-Addiction</p></a></div>
+<div style="display: flex;  flex-flow: column; flex-wrap: wrap; margin-left: 35vh; margin-top: 10vh; ">
+ 
+<div style="display: flex; flex-flow: row; margin-top: 10vh; flex-wrap: wrap;"><img src="Nutrition_share.jpg" style="width: 30vh; height: 30vh;"><div style="margin-left: 9vh; width: 70vh;"><h3 style="color: #FD4955;">Nutrition</h3><h3 style="padding-left: 6vh;">Benefits of a healthy Breakfast!</h3><p>Eating a healthy breakfast has many benefits, both for your physical and mental well-being.</p><br><p style="float:right;">-Dr. Anupama</p></div></div>
+<div style="display: flex; flex-flow: row; margin-top: 10vh; flex-wrap: wrap;"><img src="download.jpg" style="width: 30vh; height: 30vh;"><div style="margin-left: 9vh; width: 70vh;"><h3 style="color: #FD4955;">Exercise & Fitness</h3><h3 style="padding-left: 6vh;"> Are Trekking beneficial for our health?</h3><p>It’s hardly surprising that an increasing number of people choose to enhance their health by trekking instead of going to the gym. The good news is that walking or trekking for just 30 minutes a day can positively influence your health!</p><br><p style="float:right;">-Dr. Khurana </p></div></div>
+<div style="display: flex; flex-flow: row;flex-wrap: wrap; margin-top: 10vh;"><img src="yoga_body_images-slide-HNVD-superJumbo.jpg" style="width: 30vh; height: 30vh;"><div style="margin-left: 9vh; width: 70vh;"><h3 style="color: #FD4955;">Yoga</h3><h3 style="padding-left: 6vh;">Yoga for everyone.</h3><p>The building blocks of yoga are poses. These are good ones to learn as you build a regular yoga practice.</p><br><p style="float:right;">-Dr. Sudhiksha Mishra</p></div></div>
+<span id="dots">.</span><span id="more">
+  <div style="display: flex; flex-flow: row; margin-top: 10vh; flex-wrap: wrap;"><img src="Nutrition_share.jpg" style="width: 30vh; height: 30vh;"><div style="margin-left: 9vh; width: 70vh;"><h3 style="color: #FD4955;">Nutrition</h3><h3 style="padding-left: 6vh;">Benefits of a healthy Breakfast!</h3><p>Eating a healthy breakfast has many benefits, both for your physical and mental well-being.</p><br><p style="float:right;">-Dr. Anupama</p></div></div>
+  <div style="display: flex; flex-flow: row; margin-top: 10vh; flex-wrap: wrap;"><img src="download.jpg" style="width: 30vh; height: 30vh;"><div style="margin-left: 9vh; width: 70vh;"><h3 style="color: #FD4955;">Exercise & Fitness</h3><h3 style="padding-left: 6vh;"> Are Trekking beneficial for our health?</h3><p>It’s hardly surprising that an increasing number of people choose to enhance their health by trekking instead of going to the gym. The good news is that walking or trekking for just 30 minutes a day can positively influence your health!</p><br><p style="float:right;">-Dr. Khurana </p></div></div>
+  <div style="display: flex; flex-flow: row;flex-wrap: wrap; margin-top: 10vh;"><img src="yoga_body_images-slide-HNVD-superJumbo.jpg" style="width: 30vh; height: 30vh;"><div style="margin-left: 9vh; width: 70vh;"><h3 style="color: #FD4955;">Yoga</h3><h3 style="padding-left: 6vh;">Yoga for everyone.</h3><p>The building blocks of yoga are poses. These are good ones to learn as you build a regular yoga practice.</p><br><p style="float:right;">-Dr. Sudhiksha Mishra</p></div>
+ 
+
+
+</span>
+
+
+
+</div>
+</div>
+
+<center><button onclick="myFunction()" id="myBtn" style=" background-color: #FD4955 ; padding: 4px 40px 4px 40px; border-radius: 4%; color: aliceblue;">Read more</button></center>
+
+
+<br><br><br><br> 
+
+<div style="background-color: #D9D9D9; height: 30%; padding: 5% 15% 5% 15%; display: flex; flex-wrap: wrap; flex-flow: row;">
+
+  Get all the latest Health Articles delivered to your mail so you wont miss any. <input type="email" style="margin-left: 30%;"><button style="padding: 5px 50px 5px 50px; color:white;background-color: #FD4955;">Sign Up</button>
+
+</div><br><br><hr><br><br>
+
+<div class="footer" style="display: flex;flex-flow: row; flex-direction: row; flex-wrap: wrap; justify-content: center; color: rgb(241, 241, 241); align-items: center;padding: 20px 20px 20px 20px;">
+ 
+    <li><a href="{% url 'contact' %}">Contact US</a></li>
+    <li><a href="{% url 'services' %}">Services</a></li>
+    <li><a href="{% url 'privacy' %}">privacy</a></li>
+
+  
+</div>
+        
+
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
